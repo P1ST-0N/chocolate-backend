@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif, sans-serif;
+        color: #111111;
+      }
+      p {
+        margin: 0;
+      }
+      .container {
+        width: 50%;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 1px solid #fd9222;
+        border-radius: 10px;
+      }
+      .header {
+        background-color: #fd9222;
+        padding: 10px;
+        text-align: center;
+        color: #ffffff;
+      }
+      .content {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .promo-code {
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #fd9222;
+        color: #ffffff;
+        padding: 10px;
+        margin-top: 15px;
+        display: inline-block;
+        border-radius: 5px;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        background-color: #f8f8f8;
+        padding: 10px;
+      }
+      .unsubscribe {
+        font-style: 12px;
+        color: #a2a8b2;
+      }
+    </style>
+    <title>Subscription confirmation</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Congratulations!</h1>
+      </div>
+      <div class="content">
+        <p>Thanks for subscribing to Chocolate market!</p>
+        <p>For this, we give you a promo code for a 10% discount:</p>
+        <p class="promo-code"><%= promoCode %></p>
+      </div>
+      <div class="footer">
+        <div class="unsubscribe">
+          <p>Sincerely, the Chocolate market team</p>
+          <p>&copy; Copyright 2024 Chocolate market. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
