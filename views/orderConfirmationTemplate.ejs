@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif, sans-serif;
+        color: #111111;
+      }
+      p {
+        margin: 0;
+      }
+      .container {
+        width: 50%;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 1px solid #fd9222;
+        border-radius: 10px;
+      }
+      .header {
+        background-color: #fd9222;
+        padding: 10px;
+        text-align: center;
+        color: #ffffff;
+      }
+      .content {
+        background-color: #dddddd;
+        font-size: 16px;
+        padding-top: 20px;
+      }
+      .hello {
+        text-align: center;
+        color: #111111;
+      }
+      .order {
+        background-color: #ffffff;
+        border: 1px solid #fd9222;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px 10px 0 10px;
+        color: #111111;
+      }
+      .order-item {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        color: #111111;
+      }
+      .product {
+        margin-left: 10px;
+        padding-top: 10px;
+        color: #111111;
+      }
+      .total {
+        padding: 20px 20px;
+        text-align: right;
+        color: #111111;
+      }
+      .footer {
+        text-align: center;
+        font-size: 12px;
+        background-color: #f8f8f8;
+        padding: 10px;
+        color: #111111;
+      }
+      .thankYou {
+        margin-bottom: 10px;
+      }
+    </style>
+    <title>Order Confirmation</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Order Confirmation</h1>
+      </div>
+      <div class="content">
+        <div class="hello">
+          <p>Dear <%= userContact.firstName %> <%= userContact.lastName %>,</p>
+          <p>We have received your order. Here are the details:</p>
+        </div>
+        <div class="order">
+          <% order.forEach(item => { %>
+          <div class="order-item">
+            <img
+              src="<%= item.photo %>"
+              alt="<%= item.nameProduct %>"
+              width="100"
+            />
+            <div class="product">
+              <p><strong>Product:</strong> <%= item.nameProduct %></p>
+              <p><strong>Quantity:</strong> <%= item.quantity %></p>
+              <p><strong>Total:</strong> <%= item.total %></p>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+
+        <div class="total">
+          <p><strong>Your promocode</strong>: <%= discount %>%</p>
+          <p><strong>Total Price:</strong> <%= totalPrice %> UAN</p>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="thankYou">
+          <p>Our manager will contact you soon.</p>
+          <p>Thank you for choosing Chocolate market!</p>
+        </div>
+        <p>&copy; Copyright 2024 Chocolate market. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
