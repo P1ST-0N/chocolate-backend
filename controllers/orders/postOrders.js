@@ -1,5 +1,5 @@
 import { Order } from "../../models/order.js";
-import sendEmail from "../../helper/sendEmail.js";
+import { sendEmail } from "../../helper/sendEmail.js";
 import renderTemplate from "../../helper/renderTemplate.js";
 
 const postOrders = async (req, res, next) => {

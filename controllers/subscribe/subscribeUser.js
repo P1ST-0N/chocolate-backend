@@ -1,5 +1,5 @@
 import { Subscribe } from "../../models/subscribe.js";
-import sendEmail from "../../helper/sendEmail.js";
+import { sendEmail } from "../../helper/sendEmail.js";
 import renderTemplate from "../../helper/renderTemplate.js";
 import HttpError from "../../helper/HttpError.js";
 import getRandomPromoCode from "../promocodes/getRandomPromoCode.js";
