@@ -6,7 +6,11 @@ import mongoose from "mongoose";
 import swaggerDocument from "./swagger.js";
 import swaggerUi from "swagger-ui-express";
 
-//imports routes 5x
+import productsRouter from "./routes/productsRouter.js";
+import reviewsRouter from "./routes/reviewsRouter.js";
+import subscribeRouter from "./routes/subscribeRouter.js";
+import orderRouter from "./routes/orderRouter.js";
+import promocodesListRouter from "./routes/promocodesListRouter.js";
 
 const app = express();
 const { DB_HOST, PORT } = process.env;
@@ -17,7 +21,11 @@ app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-//app.use(routes 5x)
+app.use("/products", productsRouter);
+app.use("/reviews", reviewsRouter);
+app.use("/subscribe", subscribeRouter);
+app.use("/promocodes", promocodesListRouter);
+app.use("/order", orderRouter);
 
 app.use((_, res) => {
   res.status(404).json({ message: "Route not found" });
