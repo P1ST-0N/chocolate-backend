@@ -16,13 +16,7 @@ const app = express();
 const { DB_HOST, PORT } = process.env;
 
 app.use(morgan("tiny"));
-app.use(
-  cors({
-    origin: "https://project-chocolate-market.vercel.app", // Дозволені домени
-    methods: "GET, POST, PUT, DELETE", // Дозволені методи
-    allowedHeaders: "Content-Type, Authorization", // Дозволені заголовки
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
